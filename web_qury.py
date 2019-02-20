@@ -14,7 +14,7 @@ class save_feds():
         url = 'http://sqawfweb05.hosted-commerce.net:8080/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestFormDataToFEDS'
 
         # for mac
-        driver = webdriver.Chrome('/Users/ihorzinoviev/PycharmProjects/WFchecking/chromedriver')
+        driver = webdriver.Chrome('//Users/ihorzinoviev/PycharmProjects/WFchecking/chromedriver 2')
         # for Win
         # driver = webdriver.Chrome('C:\WORK\chromedriver')
         driver.get(url2)
@@ -48,11 +48,12 @@ class save_feds():
         #base_dir = "C:/Users/izinovyev/PycharmProjects/checkFEDS/xout.edi"
         #for Mac
         base_dir = "/Users/ihorzinoviev/PycharmProjects/WFchecking/xout.edi"
+
         path_to_image = os.path.join(base_dir, "xout.edi")
         global driver
 
         #for mac
-        driver = webdriver.Chrome('/Users/ihorzinoviev/PycharmProjects/WFchecking/chromedriver')
+        driver = webdriver.Chrome('/Users/ihorzinoviev/PycharmProjects/WFchecking/chromedriver 2')
         #for Win
         #driver = webdriver.Chrome('C:\WORK\chromedriver')
 

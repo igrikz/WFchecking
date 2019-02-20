@@ -1,7 +1,8 @@
 import FEDS_X12
 
 class creats_x12():
-    def spFeds(self):
+    @staticmethod
+    def spFeds():
         segCon = FEDS_X12.seg_conv()
         input = open("test.feds", "r").read().split('\n')
         output = open("xout.edi", "w")
@@ -36,7 +37,7 @@ class creats_x12():
         output.write(iea + '\n')
         output.close()
 
-
+    @staticmethod
     def docN_GS(dic):
         dicts_from_file = {}
         with open('docNum_GS', 'r') as inf:

@@ -1,0 +1,25 @@
+ISA*00*          *00*          *ZZ*SPS            *ZZ*SPS            *190214*1607*U*00401*000000001*0*T*}
+GS*IN*SPS*SPS*20190214*1607*0001*X*004010
+ST*810*00010001
+BIG*20190219*12345*20190210*331203334***DI
+REF*CO*194410306428
+N1*BT*POTTERY BARN KIDS
+N3*4300 CONCORDE ROAD
+N4*MEMPHIS*TN*38118*USA
+N1*ST*JERDTC*92*JER
+N3*340 Middlesex Center Boulevard
+N4*Jamesburg*NJ*08831*USA
+DTM*011*20190219
+IT1*4*1*EA*288.0**SK*420740
+PID*F*08***Modern Tufted Convertible Wingback Rocker:Performance Everyday Velvet:Platinum:D
+IT1*1*1*EA*1.0**SK*5159335
+PID*F*08***Urban:Ottoman:Basketweave Slub:Ash
+IT1*2*1*EA*460.0**SK*7906758
+PID*F*08***Wingback:Twin Sleeper:Linen Blend:Navy
+IT1*3*1*EA*162.0**SK*8774601
+PID*F*08***Wingback Upholstered Ottoman Belgian Linen Natural Espresso
+TDS*91100
+CTT*4*4
+SE*21*00010001
+GE*1*0001
+IEA*1*000000001

@@ -2,13 +2,14 @@ import FEDS_X12
 
 class creats_x12():
     @staticmethod
-    def spFeds():
+    def spFeds(version):
+
         segCon = FEDS_X12.seg_conv()
         input = open("test.feds", "r").read().split('\n')
         output = open("xout.edi", "w")
         docnum = input[1]
-        isa = 'ISA*00*          *00*          *ZZ*SPS            *ZZ*SPS            *190214*1607*U*' + '00401' + '*000000001*0*T*}'
-        gs = 'GS*'+creats_x12.docN_GS(docnum[1:])+'*SPS*SPS*20190214*1607*0001*X*' + '004010'
+        isa = 'ISA*00*          *00*          *ZZ*SPS            *ZZ*SPS            *190214*1607*U*' + '00'+str(version[:-1])+ '*000000001*0*T*}'
+        gs = 'GS*'+creats_x12.docN_GS(docnum[1:])+'*SPS*SPS*20190214*1607*0001*X*' + '00'+str(version)
         st = 'ST*' + docnum[1:] + '*00010001'
         output.write(isa + '\n')
         output.write(gs + '\n')

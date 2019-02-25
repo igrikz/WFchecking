@@ -6,12 +6,13 @@ import File_x12
 wc=web_qury.save_feds()
 conv=File_x12.creats_x12()
 
+class main():
+    @staticmethod
+    def run(num,ver):
 
-
-
-wc.qury("425448")
-conv.spFeds()
-wc.puschInweb()
+        wc.qury(num)
+        conv.spFeds(ver)
+        wc.puschInweb()
 
 '''login = 'sqaappdev'
 password = 'sqaappdev'

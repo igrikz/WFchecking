@@ -12,12 +12,11 @@ def index(request):
         version  = request.POST.get("version")
 
         mm = Main.main()
-        #conv = File_x12.creats_x12()
+
 
         mm.run(doc_num,version)
-        #conv.spFeds("4010")
-        #wc.puschInweb()
-        return HttpResponse("<h2>Hello, {0}</h2>".format(version))
+
+        return HttpResponse("<h2>Errors for doc num:  {0}</h2>".format(doc_num))
 
     else:
         userform = UserForm()

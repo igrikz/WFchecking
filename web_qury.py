@@ -58,9 +58,18 @@ class save_feds():
         #driver = webdriver.Chrome('C:\WORK\chromedriver')
 
         driver.get('https://www.edivalidation.com/valid.html')
-
+        driver.find_element_by_xpath('//*[@id="output-type"]/option[3]').click()
         driver.find_element_by_xpath('//*[@id="files"]').send_keys(base_dir)
-        file = open("testHTML.html", "w")
+
+        #file = open("testHTML.html", "w")
+        #file.write()
+        #//*[@id="downloadify"]
+        #//*[@id="output-type"]/option[3]
+        #// *[ @ id = "output-type"]
+
+
+
+
 
 
 

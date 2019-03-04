@@ -1,8 +1,11 @@
 from selenium import webdriver
-import requests
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
+import glob
 import os
-from selenium.webdriver.common.alert import Alert
-from selenium.webdriver.common.keys import Keys
+
 
 class save_feds():
     @staticmethod
@@ -50,18 +53,43 @@ class save_feds():
         #base_dir = "/Users/ihorzinoviev/PycharmProjects/WFchecking/xout.edi"
 
         path_to_image = os.path.join(base_dir, "xout.edi")
-        global driver
+        #global driver
 
         #for mac
         #driver = webdriver.Chrome('/Users/ihorzinoviev/PycharmProjects/WFchecking/chromedriverWin')
         #for Win
         driver = webdriver.Chrome('C:/Users/izinovyev/PycharmProjects/WFchecking/chromedriverWin')
 
+
         driver.get('https://www.edivalidation.com/valid.html')
         driver.find_element_by_xpath('//*[@id="files"]').send_keys(base_dir)
         driver.find_element_by_xpath('//*[@id="output-type"]/option[3]').click()
 
+        wait = WebDriverWait(driver, 10)
+        element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="downloadify"]')))
 
+
+        '''chrome_options = webdriver.ChromeOptions()
+        prefs = {'download.default_directory': 'C:/Users/izinovyev/PycharmProjects/WFchecking/errors'}
+        chrome_options.add_experimental_option('prefs', prefs)
+        driver = webdriver.Chrome(chrome_options=chrome_options)'''
+
+
+        driver.find_element_by_xpath('//*[@id="downloadify"]').click()
+
+        '''file_names = glob.glob('C:/Users/izinovyev/Downloads/edijson*')
+
+        for name in file_names:
+            print(name)
+
+        file = open("C:/Users/izinovyev/Downloads/"+name[29:], "r")
+        print(file)'''
+
+        #driver.close()
+
+
+
+        #driver.find_elements_by_id('downloadify').click()
 
         #file = open("testHTML.html", "w")
         #file.write()

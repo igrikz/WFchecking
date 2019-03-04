@@ -14,9 +14,9 @@ class save_feds():
         url = 'http://sqawfweb05.hosted-commerce.net:8080/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestFormDataToFEDS'
 
         # for mac
-        driver = webdriver.Chrome('//Users/ihorzinoviev/PycharmProjects/WFchecking/chromedriver 2')
+        #driver = webdriver.Chrome('//Users/ihorzinoviev/PycharmProjects/WFchecking/hromedriverMac')
         # for Win
-        # driver = webdriver.Chrome('C:\WORK\chromedriver')
+        driver = webdriver.Chrome('C:/Users/izinovyev/PycharmProjects/WFchecking/chromedriverWin')
         driver.get(url2)
 
         elem = driver.find_element_by_name("ID")
@@ -32,7 +32,7 @@ class save_feds():
 
     @staticmethod
     def puschInweb():
-        '''base_dir = "C:/Users/izinovyev/PycharmProjects/checkFEDS/"
+        '''base_dir = "C:/Users/izinovyev/PycharmProjects/WFchecking/"
                path_to_image = os.path.join(base_dir, "xout.edi")
 
                response = requests.get("https://www.edivalidation.com/")
@@ -45,21 +45,23 @@ class save_feds():
                    file.write(response.text)
                    f.close()'''
         #for Win
-        #base_dir = "C:/Users/izinovyev/PycharmProjects/checkFEDS/xout.edi"
+        base_dir = "C:/Users/izinovyev/PycharmProjects/WFchecking/xout.edi"
         #for Mac
-        base_dir = "/Users/ihorzinoviev/PycharmProjects/WFchecking/xout.edi"
+        #base_dir = "/Users/ihorzinoviev/PycharmProjects/WFchecking/xout.edi"
 
         path_to_image = os.path.join(base_dir, "xout.edi")
         global driver
 
         #for mac
-        driver = webdriver.Chrome('/Users/ihorzinoviev/PycharmProjects/WFchecking/chromedriver 2')
+        #driver = webdriver.Chrome('/Users/ihorzinoviev/PycharmProjects/WFchecking/chromedriverWin')
         #for Win
-        #driver = webdriver.Chrome('C:\WORK\chromedriver')
+        driver = webdriver.Chrome('C:/Users/izinovyev/PycharmProjects/WFchecking/chromedriverWin')
 
         driver.get('https://www.edivalidation.com/valid.html')
-        driver.find_element_by_xpath('//*[@id="output-type"]/option[3]').click()
         driver.find_element_by_xpath('//*[@id="files"]').send_keys(base_dir)
+        driver.find_element_by_xpath('//*[@id="output-type"]/option[3]').click()
+
+
 
         #file = open("testHTML.html", "w")
         #file.write()
@@ -69,13 +71,3 @@ class save_feds():
 
 
 
-
-
-
-
-
-
-
-
-
-#save_feds.puschInweb()

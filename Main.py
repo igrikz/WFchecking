@@ -13,6 +13,8 @@ class main():
         wc.qury(num)
         conv.spFeds(ver)
         wc.puschInweb()
+'''conv.spFeds("5010")
+wc.puschInweb()'''
 
 '''login = 'sqaappdev'
 password = 'sqaappdev'

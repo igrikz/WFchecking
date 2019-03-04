@@ -1,0 +1,55 @@
+<html><head><title>Web EC Admin Utilities</title></head><body bgcolor=#ccccff link=#330066 vlink=#666666 alink=#0000FF>
+<font size=+2><B>Web EC Admin Utilities</B></font><HR>
+<TABLE WIDTH=100%><TR VALIGN=top><TD WIDTH=95% bgcolor=#cccccc>
+<B>sps.webec.test.TestFormDataToFEDS</B>
+This tool will return a document's FEDS representation given the document's unique identifier. <B>Warning: This data has no meaning for inbound Documents.</B>You can enter the document's unique identifier in the ID field and/or query the database and return the document in that manner.
+<SCRIPT>
+function enterFirstChoice(choice) {//Allows user to change first option
+  if(choice.selectedIndex == 0) {
+    choice.options[0].value = prompt('Enter value:', choice.options[0].value);
+    choice.options[0].text = choice.options[0].value;
+  }
+}
+</SCRIPT>
+<FORM ACTION='/webec/servlet/sps.webec.server.servlets.admin.Utilities' METHOD='post'>
+<INPUT TYPE='hidden' NAME='RunTool' VALUE='sps.webec.test.TestFormDataToFEDS'>
+<TABLE>
+<TR><TD>Modify:</TD><TD>
+<INPUT TYPE=hidden NAME='Modify-Type' VALUE='2'>
+<SELECT NAME='Modify' SIZE=1>
+<OPTION SELECTED VALUE='false'>false
+<OPTION VALUE='true'>true
+</SELECT>
+ <I>Do any modifications.</I>
+</TD></TR>
+<TR><TD>Query:</TD><TD>
+<INPUT TYPE=hidden NAME='Query-Type' VALUE='0'>
+<INPUT SIZE=40 NAME='Query' VALUE="">
+ <I>Query to select the items. Use 'sf' as a shortcut for 'select web_doc_uid from web_document where '</I>
+</TD></TR>
+<TR><TD>ID:</TD><TD>
+<INPUT TYPE=hidden NAME='ID-Type' VALUE='0'>
+<INPUT SIZE=40 NAME='ID' VALUE="">
+ <I>Id of item to use. (Comma separated)</I>
+</TD></TR>
+</TABLE>
+<INPUT TYPE='submit' VALUE='Run'>
+</FORM>
+</TD><TD WIDTH=5%>
+<B>ReadOnly</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestDocumentRead">TestDocumentRead</A><BR>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestFormDataToFEDS">TestFormDataToFEDS</A><BR>
+<B>Modify</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.WriteXtencils">WriteXtencils</A><BR>
+<B>DocumentsModify</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.DocumentExport">DocumentExport</A><BR>
+<B>CompanyManagement</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.CompanyAdd">CompanyAdd</A><BR>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestTrade">TestTrade</A><BR>
+<B>DocumentModify</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.DocumentXmlEdit">DocumentXmlEdit</A><BR>
+<B>CustomerSupport</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.CompanyModify">CompanyModify</A><BR>
+<BR><I><FONT SIZE=-1>If the output looks wrong check the log.</FONT></I>
+</TD></TR></TABLE>
+</body></html>

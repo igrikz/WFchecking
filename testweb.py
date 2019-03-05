@@ -19,11 +19,20 @@ for name in file_names:
 #file = open("C:/Users/izinovyev/Downloads/" + name[29:], "r")
 
 dicts_from_file = {}
-
+text=''
 print(name[29:])
+file=open('test.feds','r')
 with open("C:/Users/izinovyev/Downloads/" + name[29:], 'r') as inf:
     for line in inf:
         dicts_from_file = json.loads(line)
-        print(dicts_from_file["segmentWithError"]+': '+dicts_from_file["message"] + " Value: "+ dicts_from_file["value"] + " Path: "+dicts_from_file["errorHashCode"])
+        if dicts_from_file["errorCode"]!="EF":
+                    text+=dicts_from_file["segmentWithError"]+': '+dicts_from_file["message"] + " Value: "+ dicts_from_file["value"] + " Path: "+dicts_from_file["errorHashCode"]
+                    text+='\n'
+textF=''
+for line in file:
+    print(line)
+    textF += line
+    textF += '<br>'
 
+#print(text+ textF)
 #print(file.read())

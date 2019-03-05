@@ -26,12 +26,20 @@ def index(request):
 
         print(name[29:])
         text=''
+        textF=''
         with open("C:/Users/izinovyev/Downloads/" + name[29:], 'r') as inf:
             for line in inf:
                 dicts_from_file = json.loads(line)
-                text+='\n'+dicts_from_file["segmentWithError"] + ': ' + dicts_from_file["message"] + " Value: " + dicts_from_file["value"] + " Path: " + dicts_from_file["errorHashCode"]
+                if dicts_from_file["errorCode"]!="EF":
+                    text+=dicts_from_file["segmentWithError"] + ':  ' + dicts_from_file["message"] + "   Value: " + dicts_from_file["value"] + "    Path: " + dicts_from_file["errorHashCode"]
+                    text +="<br><br>"
+        file=open('test.feds','r')
+        for line in file:
+            textF+=line
+            textF+='<br>'
 
-        return HttpResponse("<h2>Errors for doc num:  {0}</h2>".format(doc_num)+"<h2>Json file name:  {0}</h1>".format(name[29:])+text)
+
+        return HttpResponse("<h2>Errors for doc num:  {0}</h2>".format(doc_num)+"<h2>File name:  {0}</h1>".format(name[29:])+text + '<h1> FEDS: '+ '<h4>' +textF)
 
     else:
         userform = UserForm()

@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 import glob
 import os
+import time
 
 
 class save_feds():
@@ -77,6 +78,8 @@ class save_feds():
 
         driver.find_element_by_xpath('//*[@id="downloadify"]').click()
 
+        time.sleep(2)
+        driver.close()
         '''file_names = glob.glob('C:/Users/izinovyev/Downloads/edijson*')
 
         for name in file_names:

@@ -10,7 +10,7 @@ class main():
     @staticmethod
     def run(num,ver):
 
-        wc.qury(num)
+        wc.curyCon(num)
         conv.spFeds(ver)
         wc.puschInweb()
 

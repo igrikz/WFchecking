@@ -1,99 +1,80 @@
-<html><head><title>Web EC Admin Utilities</title></head><body bgcolor=#ccccff link=#330066 vlink=#666666 alink=#0000FF>
-<font size=+2><B>Web EC Admin Utilities</B></font><HR>
-<TABLE WIDTH=100%><TR VALIGN=top><TD WIDTH=95% bgcolor=#cccccc>
-<B>sps.webec.test.TestFormDataToFEDS</B>
-This tool will return a document's FEDS representation given the document's unique identifier. <B>Warning: This data has no meaning for inbound Documents.</B>You can enter the document's unique identifier in the ID field and/or query the database and return the document in that manner.
-<TABLE>
-<TR><TD>Modify:</TD><TD></TD></TR>
-<TR><TD>Query:</TD><TD></TD></TR>
-<TR><TD>ID:</TD><TD>424735</TD></TR>
-</TABLE>
-<B>Message:</B><BR>
-<PRE><BR>
-
-PACPALLAPPDEV
+P61YALLAPPDEV
 D850
 N0000
-K861439997
-K
+K110089245
+K4565474
 K
 SBEG
 E00100000
-E002000DR
-E003000861439997
-E00500020120322
+E002000DS
+E003000110089245
+E00500020180702
 SREF
-E001000VN
-E002000Triarch
-SDTM
-E001000010
-E00200020120322
+E00100019
+E002000PB
+SREF
+E001000IA
+E0020001613
+SREF
+E001000CO
+E002000081835724072
 STD5
-E0020002
-E003000UPSN
-E004000ZZ
-E005000GR
+E004000U
+E012000CG
 SN1
 E001000ST
-E002000Renee Pryor
+E002000BLAINE BRADDOCK
 SN3
-E001000756 Beechwood Centre Rd
+E001000122 DOWNING CT
 SN4
-E001000Avon
-E002000IN
-E00300046123
+E001000BELLE CHASSE
+E002000LA
+E00300070037
+E004000USA
 SPER
-E001000RQ
+E001000IC
 E003000TE
-E0040003174020468
+E0040005044587007
 SN1
 E001000BT
-E002000Build.com
-E0030009
-E004000847174989
+E002000POTTERY BARN
 SN3
-E001000PO Box 7990
+E0010004300 CONCORDE ROAD
 SN4
-E001000Chico
-E002000CA
-E00300095973
+E001000MEMPHIS
+E002000TN
+E00300038118
+E004000USA
+SN1
+E001000SO
+E002000BLAINE BRADDOCK
+SN3
+E001000127 CHAPEL HILL DR
+SN4
+E001000BELLE CHASSE
+E002000LA
+E00300070037
+E004000USA
 SPO1
 E0010001
-E0020001.0
+E0020003.0
 E003000EA
-E004000125.0
-E006000VN
-E00700031177
-E008000UP
-E009000751856013309
+E00400082.95
+E006000SK
+E0070004565474
+SCUR
+E001000BY
+E002000USD
+SMEA
+E002000WT
+E00300027.0
+E004001LB
 SPID
 E001000F
-E005000triarch international 31177 brushed steel
+E00200008
+E005000PB8741166 Scarlett Frameless Monogram Mirror
+SDTM
+E001000002
+E00200020181106
 SCTT
 E0010001
-<BR>
-
-</PRE><BR>
-<HR>
-<B>Log:</B><PRE>AbstractTool.use(sps.webec.test.TestFormDataToFEDS)
-TestFormDataToFEDS.use (sps.webec.test.TestFormDataToFEDS)
-processIDs Done.
-</PRE><HR>
-</TD><TD WIDTH=5%>
-<B>ReadOnly</B>
-<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestDocumentRead">TestDocumentRead</A><BR>
-<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestFormDataToFEDS">TestFormDataToFEDS</A><BR>
-<B>Modify</B>
-<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.WriteXtencils">WriteXtencils</A><BR>
-<B>DocumentsModify</B>
-<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.DocumentExport">DocumentExport</A><BR>
-<B>CompanyManagement</B>
-<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.CompanyAdd">CompanyAdd</A><BR>
-<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestTrade">TestTrade</A><BR>
-<B>DocumentModify</B>
-<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.DocumentXmlEdit">DocumentXmlEdit</A><BR>
-<B>CustomerSupport</B>
-<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.CompanyModify">CompanyModify</A><BR>
-<BR><I><FONT SIZE=-1>If the output looks wrong check the log.</FONT></I>
-</TD></TR></TABLE>
-</body></html>

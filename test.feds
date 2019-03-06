@@ -1,79 +1,99 @@
-P46JALLAPPDEV
+<html><head><title>Web EC Admin Utilities</title></head><body bgcolor=#ccccff link=#330066 vlink=#666666 alink=#0000FF>
+<font size=+2><B>Web EC Admin Utilities</B></font><HR>
+<TABLE WIDTH=100%><TR VALIGN=top><TD WIDTH=95% bgcolor=#cccccc>
+<B>sps.webec.test.TestFormDataToFEDS</B>
+This tool will return a document's FEDS representation given the document's unique identifier. <B>Warning: This data has no meaning for inbound Documents.</B>You can enter the document's unique identifier in the ID field and/or query the database and return the document in that manner.
+<TABLE>
+<TR><TD>Modify:</TD><TD></TD></TR>
+<TR><TD>Query:</TD><TD></TD></TR>
+<TR><TD>ID:</TD><TD>424735</TD></TR>
+</TABLE>
+<B>Message:</B><BR>
+<PRE><BR>
+
+PACPALLAPPDEV
 D850
 N0000
-K12
+K861439997
 K
 K
 SBEG
-E002000SA
-E00300012
-E00500020190302
+E00100000
+E002000DR
+E003000861439997
+E00500020120322
 SREF
-E001000IA
-E00200012
-E001000AN
-E00200012
 E001000VN
-E00200012
+E002000Triarch
 SDTM
-E001000013
-E00200020190302
-SN9
-E001000GFT
-SMSG
-E00100012
-SN9
-E001000GEN
-SMSG
-E00100012
-SN9
-E001000SHP
-SMSG
-E00100012
-SN9
-E001000PCK
-SMSG
-E00100012
-SN9
-E001000RTN
-SMSG
-E00100012
+E001000010
+E00200020120322
+STD5
+E0020002
+E003000UPSN
+E004000ZZ
+E005000GR
 SN1
 E001000ST
-E00200012
+E002000Renee Pryor
 SN3
-E00100012
-E00200012
+E001000756 Beechwood Centre Rd
 SN4
-E00100012
-E00300012
-E00400012
-E005000CY
-E00600012
+E001000Avon
+E002000IN
+E00300046123
 SPER
-E001000RE
+E001000RQ
 E003000TE
-E00400012
-E005000EM
-E00600012
+E0040003174020468
 SN1
-E001000OB
-E003000UL
-E00400012
-SPO1
-E00100012
-E00200012.0
-E00400012.0
-E005000PE
-E006000BP
-E00700012
-E008000VP
-E00900012
-E010000EN
-E01100012
-SREF
 E001000BT
-E00200012
-SQTY
-E001000B3
-E00200012.0
+E002000Build.com
+E0030009
+E004000847174989
+SN3
+E001000PO Box 7990
+SN4
+E001000Chico
+E002000CA
+E00300095973
+SPO1
+E0010001
+E0020001.0
+E003000EA
+E004000125.0
+E006000VN
+E00700031177
+E008000UP
+E009000751856013309
+SPID
+E001000F
+E005000triarch international 31177 brushed steel
+SCTT
+E0010001
+<BR>
+
+</PRE><BR>
+<HR>
+<B>Log:</B><PRE>AbstractTool.use(sps.webec.test.TestFormDataToFEDS)
+TestFormDataToFEDS.use (sps.webec.test.TestFormDataToFEDS)
+processIDs Done.
+</PRE><HR>
+</TD><TD WIDTH=5%>
+<B>ReadOnly</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestDocumentRead">TestDocumentRead</A><BR>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestFormDataToFEDS">TestFormDataToFEDS</A><BR>
+<B>Modify</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.WriteXtencils">WriteXtencils</A><BR>
+<B>DocumentsModify</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.DocumentExport">DocumentExport</A><BR>
+<B>CompanyManagement</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.CompanyAdd">CompanyAdd</A><BR>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestTrade">TestTrade</A><BR>
+<B>DocumentModify</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.DocumentXmlEdit">DocumentXmlEdit</A><BR>
+<B>CustomerSupport</B>
+<LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.CompanyModify">CompanyModify</A><BR>
+<BR><I><FONT SIZE=-1>If the output looks wrong check the log.</FONT></I>
+</TD></TR></TABLE>
+</body></html>

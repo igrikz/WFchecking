@@ -3,38 +3,82 @@
 <TABLE WIDTH=100%><TR VALIGN=top><TD WIDTH=95% bgcolor=#cccccc>
 <B>sps.webec.test.TestFormDataToFEDS</B>
 This tool will return a document's FEDS representation given the document's unique identifier. <B>Warning: This data has no meaning for inbound Documents.</B>You can enter the document's unique identifier in the ID field and/or query the database and return the document in that manner.
-<SCRIPT>
-function enterFirstChoice(choice) {//Allows user to change first option
-  if(choice.selectedIndex == 0) {
-    choice.options[0].value = prompt('Enter value:', choice.options[0].value);
-    choice.options[0].text = choice.options[0].value;
-  }
-}
-</SCRIPT>
-<FORM ACTION='/webec/servlet/sps.webec.server.servlets.admin.Utilities' METHOD='post'>
-<INPUT TYPE='hidden' NAME='RunTool' VALUE='sps.webec.test.TestFormDataToFEDS'>
 <TABLE>
-<TR><TD>Modify:</TD><TD>
-<INPUT TYPE=hidden NAME='Modify-Type' VALUE='2'>
-<SELECT NAME='Modify' SIZE=1>
-<OPTION SELECTED VALUE='false'>false
-<OPTION VALUE='true'>true
-</SELECT>
- <I>Do any modifications.</I>
-</TD></TR>
-<TR><TD>Query:</TD><TD>
-<INPUT TYPE=hidden NAME='Query-Type' VALUE='0'>
-<INPUT SIZE=40 NAME='Query' VALUE="">
- <I>Query to select the items. Use 'sf' as a shortcut for 'select web_doc_uid from web_document where '</I>
-</TD></TR>
-<TR><TD>ID:</TD><TD>
-<INPUT TYPE=hidden NAME='ID-Type' VALUE='0'>
-<INPUT SIZE=40 NAME='ID' VALUE="">
- <I>Id of item to use. (Comma separated)</I>
-</TD></TR>
+<TR><TD>Modify:</TD><TD></TD></TR>
+<TR><TD>Query:</TD><TD></TD></TR>
+<TR><TD>ID:</TD><TD>424735</TD></TR>
 </TABLE>
-<INPUT TYPE='submit' VALUE='Run'>
-</FORM>
+<B>Message:</B><BR>
+<PRE><BR>
+
+PACPALLAPPDEV
+D850
+N0000
+K861439997
+K
+K
+SBEG
+E00100000
+E002000DR
+E003000861439997
+E00500020120322
+SREF
+E001000VN
+E002000Triarch
+SDTM
+E001000010
+E00200020120322
+STD5
+E0020002
+E003000UPSN
+E004000ZZ
+E005000GR
+SN1
+E001000ST
+E002000Renee Pryor
+SN3
+E001000756 Beechwood Centre Rd
+SN4
+E001000Avon
+E002000IN
+E00300046123
+SPER
+E001000RQ
+E003000TE
+E0040003174020468
+SN1
+E001000BT
+E002000Build.com
+E0030009
+E004000847174989
+SN3
+E001000PO Box 7990
+SN4
+E001000Chico
+E002000CA
+E00300095973
+SPO1
+E0010001
+E0020001.0
+E003000EA
+E004000125.0
+E006000VN
+E00700031177
+E008000UP
+E009000751856013309
+SPID
+E001000F
+E005000triarch international 31177 brushed steel
+SCTT
+E0010001
+<BR>
+
+</PRE><BR>
+<HR>
+<B>Log:</B><PRE>AbstractTool.use(sps.webec.test.TestFormDataToFEDS)
+TestFormDataToFEDS.use (sps.webec.test.TestFormDataToFEDS)
+processIDs Done.
+</PRE><HR>
 </TD><TD WIDTH=5%>
 <B>ReadOnly</B>
 <LI><A HREF="/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestDocumentRead">TestDocumentRead</A><BR>

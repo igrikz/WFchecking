@@ -6,14 +6,29 @@ from selenium.common.exceptions import TimeoutException
 import glob
 import os
 import time
+import requests
 
 
 class save_feds():
     @staticmethod
     def qury(doc_num):
-
         login = 'sqaappdev'
         password = 'sqaappdev'
+        payload = {'RunTool': 'sps.webec.test.TestFormDataToFEDS'
+            , 'ID': doc_num }
+
+        url2 = 'http://sqawfweb05.hosted-commerce.net:8080/webec/servlet/sps.webec.server.servlets.admin.Utilities'
+
+        s = requests.Session()
+
+        r = s.post(url2, data=payload, auth=(login, password))
+
+        file = open("testHTML.html", "w")
+        file.write(r.text)
+        file.close()
+
+
+
         url2='http://' + login + ':' + password + '@' +"sqawfweb05.hosted-commerce.net:8080/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestFormDataToFEDS"
         url = 'http://sqawfweb05.hosted-commerce.net:8080/webec/servlet/sps.webec.server.servlets.admin.Utilities?ChooseTool=sps.webec.test.TestFormDataToFEDS'
 
@@ -31,7 +46,6 @@ class save_feds():
         file = open("test.feds", "w")
         file.write(body.text)
         file.close()
-
         driver.close()
 
     @staticmethod

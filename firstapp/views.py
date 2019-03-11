@@ -31,7 +31,7 @@ def index(request):
             for line in inf:
                 dicts_from_file = json.loads(line)
                 if dicts_from_file["errorCode"]!="EF":
-                    text+=dicts_from_file["segmentWithError"] + ':  ' + dicts_from_file["message"] + "   Value: " + dicts_from_file["value"] + "    Path: " + dicts_from_file["errorHashCode"]
+                    text+=str(dicts_from_file["segmentWithError"]) + ':  ' + str(dicts_from_file["message"]) + "   Value: " + str(dicts_from_file["value"]) + "    Path: " + str(dicts_from_file["errorHashCode"])
                     text +="<br><br>"
         file=open('test.feds','r')
         for line in file:
@@ -39,7 +39,7 @@ def index(request):
             textF+='<br>'
 
 
-        return HttpResponse("<h2>Errors for doc num:  {0}</h2>".format(doc_num)+"<h2>File name:  {0}</h1>".format(name[29:])+text + '<h1> FEDS: '+ '<h4>' +textF)
+        return HttpResponse("<h2>Errors OBSOSA SE for doc num:  {0}</h2>".format(doc_num)+"<h2>File name:  {0}</h1>".format(name[29:])+text + '<h1> FEDS: '+ '<h4>' +textF)
 
     else:
         userform = UserForm()

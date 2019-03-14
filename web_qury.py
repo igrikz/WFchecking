@@ -8,6 +8,7 @@ import os
 import time
 import requests
 from bs4 import BeautifulSoup
+import lxml.html as LH
 
 class save_feds():
     @staticmethod
@@ -35,6 +36,29 @@ class save_feds():
         file = open("test.feds", "w")
         file.write(content[13:-182])
         file.close()
+
+    @staticmethod
+    def qury_Con():
+        pp = r'C:/Users/izinovyev/PycharmProjects/WFchecking/phantomjs.exe'
+        base_dir = "C:/Users/izinovyev/PycharmProjects/WFchecking/xout.edi"
+
+        driver = webdriver.PhantomJS(pp)
+        driver.get('https://www.edivalidation.com')
+
+        driver.find_element_by_xpath('//*[@id="files"]').send_keys(base_dir)
+        # driver.find_element_by_xpath('//*[@id="output-type"]/option[3]').click()
+        wait = WebDriverWait(driver, 15)
+        element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="downloadify"]')))
+        # driver.find_element_by_xpath('//*[@id="downloadify"]').click()
+        # time.sleep(2)
+
+        file = open("testHTML.html", "w")
+        file.write(driver.page_source)
+        file.close()
+        driver.close()
+
+
+
     @staticmethod
     def qury(doc_num):
 

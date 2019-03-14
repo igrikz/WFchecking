@@ -12,7 +12,8 @@ class main():
 
         wc.curyCon(num)
         conv.spFeds(ver)
-        wc.puschInweb()
+        wc.qury_Con()
+        #wc.puschInweb()
 
 '''conv.spFeds("5010")
 wc.puschInweb()'''

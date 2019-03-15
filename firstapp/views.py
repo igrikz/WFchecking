@@ -56,7 +56,7 @@ def index(request):
             for i in file:
                 outfeds += i + '<br>'
             return HttpResponse(
-                "<h2>Errors Y OBSOSA SE .NET for doc num:  {0}</h5>".format(doc_num) ++ "<p>FEDS: {0}".format(
+                "<h2>Errors Y OBSOSA SE .NET for doc num:  {0}</h5>".format(doc_num) + "<p>FEDS: {0}".format(
                     outfeds) )
 
 

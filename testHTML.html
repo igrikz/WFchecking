@@ -108,14 +108,20 @@
                     </div>
 
                     <div>
-                    	<a href="http://xtranslator.com/extt.html">Advanced EDI translator</a>
+                    	<a href="http://xtranslator.com/extt.html">XTranslator</a>
                 	</div>
 
                 	<br>
 
                     <div>
-                		<a href="http://etasoft.com/mini.html">Simple EDI to CSV translation</a>
+                		<a href="http://etasoft.com/mini.html">Simple X12 to CSV translation</a>
                 	</div>
+
+                    <br>
+
+                    <div>
+                        <a href="http://etasoft.com/xtserver.html">Automated EDI processing</a>
+                    </div>
 
                     
 
@@ -145,7 +151,7 @@
                     <div data-bind="visible: complete()" style="">
                         <form class="form-inline">
                             <fieldset>
-                                <span class="label label-info">Total : <span data-bind="text: errorCount">2</span></span>
+                                <span class="label label-info">Total : <span data-bind="text: errorCount">4</span></span>
 
                                 <div class="pull-right">
                                 <label for="filter">Filter errors by type:</label>
@@ -204,7 +210,7 @@
                                     <td colspan="3"><strong>Segments leading to error</strong></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="3" data-bind="foreach: errorTrace"><p data-bind="text: $data">BEG*00*DS*5414464ZTEST**20190306<br></p><p data-bind="text: $data">REF*BT*2360000071<br></p><p data-bind="text: $data">REF*CNO*SDFG<br></p><p data-bind="text: $data">REF*DP*0631<br></p><p data-bind="text: $data">REF*PG*FURN ACCESS<br></p><p data-bind="text: $data">REF*SB*15<br></p><p data-bind="text: $data">PER*DC*          LISA            SCHWARTZS*TE*06022146770<br></p><p data-bind="text: $data">FOB*DF<br></p><p data-bind="text: $data">SAC*N**VI*OHDC<br></p><p data-bind="text: $data">ITD*05*2*****30<br></p></td>
+                                    <td colspan="3" data-bind="foreach: errorTrace"><p data-bind="text: $data">ISA*00*          *00*          *ZZ*SPS            *ZZ*SPS            *190214*1607*U*00401*000000001*0*T*}<br></p><p data-bind="text: $data">GS*PO*SPS*SPS*20190214*1607*0001*X*004010<br></p><p data-bind="text: $data">ST*850*00010001<br></p><p data-bind="text: $data">BEG*00*SA*001710612718**20190612<br></p><p data-bind="text: $data">FOB*PP*ZZ*COSTCO<br></p><p data-bind="text: $data">ITD*01*2*****60*****ROG 60<br></p></td>
                                 </tr>
                             </tbody>
                             </table>
@@ -239,7 +245,77 @@
                                     <td colspan="3"><strong>Segments leading to error</strong></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="3" data-bind="foreach: errorTrace"><p data-bind="text: $data">BEG*00*DS*5414464ZTEST**20190306<br></p><p data-bind="text: $data">REF*BT*2360000071<br></p><p data-bind="text: $data">REF*CNO*SDFG<br></p><p data-bind="text: $data">REF*DP*0631<br></p><p data-bind="text: $data">REF*PG*FURN ACCESS<br></p><p data-bind="text: $data">REF*SB*15<br></p><p data-bind="text: $data">PER*DC*          LISA            SCHWARTZS*TE*06022146770<br></p><p data-bind="text: $data">FOB*DF<br></p><p data-bind="text: $data">SAC*N**VI*OHDC<br></p><p data-bind="text: $data">ITD*05*2*****30<br></p></td>
+                                    <td colspan="3" data-bind="foreach: errorTrace"><p data-bind="text: $data">ISA*00*          *00*          *ZZ*SPS            *ZZ*SPS            *190214*1607*U*00401*000000001*0*T*}<br></p><p data-bind="text: $data">GS*PO*SPS*SPS*20190214*1607*0001*X*004010<br></p><p data-bind="text: $data">ST*850*00010001<br></p><p data-bind="text: $data">BEG*00*SA*001710612718**20190612<br></p><p data-bind="text: $data">FOB*PP*ZZ*COSTCO<br></p><p data-bind="text: $data">ITD*01*2*****60*****ROG 60<br></p></td>
+                                </tr>
+                            </tbody>
+                            </table>
+
+                        
+                            <span class="label label-important" data-bind="text: count">3</span>
+                            <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 30%">ISA, GS, ST Control Number</th>
+                                    <th style="width: 35%">Segment</th>
+                                    <th style="width: 45%">Error Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-bind="text: controlNumbers">000000001,0001,00010001</td>
+                                    <td data-bind="text: segmentWithError">ITD</td>
+                                    <td data-bind="text: errorType">EF - Element functional rule failed</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Error Message</strong></td>
+                                    <td><strong>Data Value</strong></td>
+                                    <td><strong>Expected</strong></td>
+                                </tr>
+                                <tr>
+                                    <td data-bind="text: message">Element ITD09 must be 8 characters long.</td>
+                                    <td data-bind="text: value"></td>
+                                    <td data-bind="text: expectedValueShort"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>Segments leading to error</strong></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" data-bind="foreach: errorTrace"><p data-bind="text: $data">ISA*00*          *00*          *ZZ*SPS            *ZZ*SPS            *190214*1607*U*00401*000000001*0*T*}<br></p><p data-bind="text: $data">GS*PO*SPS*SPS*20190214*1607*0001*X*004010<br></p><p data-bind="text: $data">ST*850*00010001<br></p><p data-bind="text: $data">BEG*00*SA*001710612718**20190612<br></p><p data-bind="text: $data">FOB*PP*ZZ*COSTCO<br></p><p data-bind="text: $data">ITD*01*2*****60*****ROG 60<br></p></td>
+                                </tr>
+                            </tbody>
+                            </table>
+
+                        
+                            <span class="label label-important" data-bind="text: count">4</span>
+                            <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 30%">ISA, GS, ST Control Number</th>
+                                    <th style="width: 35%">Segment</th>
+                                    <th style="width: 45%">Error Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-bind="text: controlNumbers">000000001,0001,00010001</td>
+                                    <td data-bind="text: segmentWithError">SE</td>
+                                    <td data-bind="text: errorType">SM - Mandatory segment missing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Error Message</strong></td>
+                                    <td><strong>Data Value</strong></td>
+                                    <td><strong>Expected</strong></td>
+                                </tr>
+                                <tr>
+                                    <td data-bind="text: message">Mandatory segment missing at /PO1</td>
+                                    <td data-bind="text: value"></td>
+                                    <td data-bind="text: expectedValueShort"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><strong>Segments leading to error</strong></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" data-bind="foreach: errorTrace"><p data-bind="text: $data">ST*850*00010001<br></p><p data-bind="text: $data">BEG*00*SA*001710612718**20190612<br></p><p data-bind="text: $data">FOB*PP*ZZ*COSTCO<br></p><p data-bind="text: $data">ITD*01*2*****60*****ROG 60<br></p><p data-bind="text: $data">TD5*****VENDORS CHOICE<br></p><p data-bind="text: $data">N9*H5*LEGAL DISCLAIMER<br></p><p data-bind="text: $data">MSG*This order incorporates the Costco Wholesale Standard Terms,<br></p><p data-bind="text: $data">MSG*as they may be amended from time to time, and any applicable<br></p><p data-bind="text: $data">MSG*signed agreements between us.<br></p><p data-bind="text: $data">SE*10*00010001<br></p></td>
                                 </tr>
                             </tbody>
                             </table>
